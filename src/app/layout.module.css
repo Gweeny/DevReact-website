@@ -1,0 +1,19 @@
+.title {
+  font-family: var(--font-roboto-mono);
+}
+
+.subtitle {
+  font-family: var(--font-roboto-mono);
+}
+
+@media (max-width: 375px) {
+  .title {
+    font-family: var(--font-roboto-mono);
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-family: var(--font-roboto-mono);
+    font-size: 14px;
+  }
+}
