@@ -1,3 +1,43 @@
+/* CSS PAGE PRINCIPALE */
+
+.errorMsg {
+  color: red;
+}
+
+.oval {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-color: var(--orange);
+  border-radius: 50%; /* Pour rendre l'élément ovale */
+}
+.oval1 {
+  width: 86.4vw;
+  height: 73.727vh;
+  border-width: 4vh;
+}
+
+.oval2 {
+  width: 78.819vw;
+  height: 64.931vh;
+  border-width: 1vh;
+}
+
+.oval3 {
+  width: 76.563vw;
+  height: 61.227vh;
+  border-width: 3vh;
+}
+
+.oval4 {
+  width: 69.56vw;
+  height: 54.225vh;
+  border-width: 0.5vh;
+}
+
+/* -----------------RESPONSIVE-------------------------- */
+
 @media (max-width: 375px) {
   /* Boite, titre + contenu */
   .moduleContainer {
@@ -148,15 +188,49 @@
   }
 
   /* Contact */
+  /* Oval */
 
   .oval {
     display: flex;
     justify-content: center;
     align-items: center;
     border-style: solid;
-    border-color: var(
-      --orange
-    ); /* Vous pouvez changer la couleur selon vos besoins */
+    border-color: var(--orange);
     border-radius: 50%; /* Pour rendre l'élément ovale */
+  }
+
+  .oval1 {
+    height: 40vh;
+    border-width: 3vw;
+  }
+
+  .oval2 {
+    height: 35vh;
+    border-width: 0.5vw;
+  }
+  .oval3 {
+    height: 33vh;
+    border-width: 3vw;
+  }
+  .oval4 {
+    height: 28vh;
+    border-width: 0.5vw;
+  }
+  .OvalText {
+    color: var(--blanc);
+    display: flex;
+    flex-direction: column;
+    justify-content: "center";
+    align-items: center;
+  }
+  .OvalText h2 {
+    color: var(--blanc);
+  }
+
+  .contactTitle {
+    color: var(--blanc);
+    font-size: 20px;
+    text-align: center;
+    margin-top: 43px;
   }
 }

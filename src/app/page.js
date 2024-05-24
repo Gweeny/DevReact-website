@@ -174,27 +174,19 @@ export default function Home() {
           <>
             <div>
               <div>
-                <Oval width={100} height={40} borderWidth={15}>
-                  <Oval width={96} height={96} borderWidth={3}>
-                    <Oval width={92} height={92} borderWidth={12}>
-                      <Oval width={88} height={88} borderWidth={2}>
-                        <div>
-                          <div
-                            style={{
-                              color: "#84DCCF",
-                              display: "flex",
-                              flexDirection: "column",
-                              justifyContent: "center",
-                              alignItems: "center",
-                            }}
-                          >
+                <Oval className={styles.oval1}>
+                  <Oval className={styles.oval2}>
+                    <Oval className={styles.oval3}>
+                      <Oval className={styles.oval4}>
+                        <div className={styles.content}>
+                          <div className={styles.OvalText}>
                             <h2>Samya Hussain</h2>
                             <h2>E-Mail : samya.hussain@hotmail.fr</h2>
                           </div>
-                          <div>
-                            <img src="test" alt="Lin" />
+                          <div className={styles.ImagesContainer}>
+                            <img src="test" alt="LinkedIn" />
                             <img src="test" alt="Indeed" />
-                            <img src="test" alt="Github" />
+                            <img src="test" alt="GitHub" />
                           </div>
                         </div>
                       </Oval>
@@ -260,28 +252,81 @@ const Jauge = ({ titre, pourcentage }) => {
 };
 
 const FormulaireContact = () => {
+  const validateEmail = (email) => {
+    return /^[\w-]+(?:\.[\w-]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,}$/.test(email);
+  };
+  const [email, setEmail] = useState("");
+  const [nom, setNom] = useState("");
+  const [prenom, setPrenom] = useState("");
+  const [message, setMessage] = useState("");
+  const [emailValid, setEmailValid] = useState(true);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!validateEmail(email)) {
+      setEmailValid(false);
+      return;
+    }
+
+    console.log("Email valide. Envoyer le formulaire...");
+  };
+
   return (
     <div>
-      <h2>Formulaire de Contact</h2>
+      <h2 className={styles.contactTitle}>Formulaire de Contact</h2>
       <div>
-        <form action="/my-handling-form-page" method="post">
+        <form
+          onSubmit={handleSubmit}
+          // action="/my-handling-form-page"
+          method="post"
+        >
           <ul>
             <li>
               <label htmlFor="mail">Email:</label>
-              <input type="email" id="mail" name="user_email" />
+              <input
+                type="email"
+                id="mail"
+                name="user_email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className={!emailValid ? styles.invalid : ""}
+              />
+              {!emailValid && (
+                <span className={styles.errorMsg}>Adresse e-mail invalide</span>
+              )}
             </li>
 
             <li>
               <label htmlFor="nom">Nom:</label>
-              <input type="text" id="name" name="user_nom" />
+              <input
+                type="text"
+                id="name"
+                name="user_nom"
+                value={nom}
+                onChange={(e) => setNom(e.target.value)}
+              />
             </li>
             <li>
               <label htmlFor="Prenom">Prénom:</label>
-              <input type="text" id="name" name="user_prenom" />
+              <input
+                type="text"
+                id="name"
+                name="user_prenom"
+                value={prenom}
+                onChange={(e) => setPrenom(e.target.value)}
+              />
             </li>
             <li>
               <label htmlFor="msg">Message:</label>
-              <textarea id="msg" name="user_message"></textarea>
+              <textarea
+                id="msg"
+                name="user_message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              ></textarea>
+            </li>
+            <li>
+              <button type="submit">Envoyer</button>
             </li>
           </ul>
         </form>
@@ -289,17 +334,6 @@ const FormulaireContact = () => {
     </div>
   );
 };
-const Oval = ({ width, height, borderWidth, children }) => {
-  return (
-    <div
-      style={{
-        width: `${width}px`,
-        height: `${height}px`,
-        borderWidth: `${borderWidth}px`,
-      }}
-      className={styles.oval}
-    >
-      {children}
-    </div>
-  );
+const Oval = ({ children, className }) => {
+  return <div className={`${styles.oval} ${className}`}>{children}</div>;
 };
