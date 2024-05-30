@@ -139,9 +139,8 @@ export default function Home() {
                 j'ai eu le privilège de découvrir l'intégralité du processus de
                 développement, de la rédaction du cahier des charges à la mise
                 en œuvre concrète.
-              </p>
-              <br />
-              <p>
+                <br />
+                <br />
                 Mon implication m'a également permis d'explorer les subtilités
                 du TypeScript et d'affiner mes compétences avec le framework CSS
                 Tailwind. Cette expérience enrichissante m'a offert

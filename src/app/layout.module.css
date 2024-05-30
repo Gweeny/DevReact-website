@@ -1,110 +1,217 @@
+.bigContainerCol {
+  background-color: var(--orange);
+  display: flex;
+  flex-direction: column;
+}
+.bigContainerRow {
+  background-color: var(--orange);
+  display: flex;
+  flex-direction: row;
+}
+
+/* Common container styles */
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--blanc);
+  z-index: 10;
+  position: absolute;
+  top: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Menu styles */
+.menuHr {
+  position: absolute;
+  z-index: 3;
+  width: 50px;
+  height: 10px;
+  top: 20px;
+  right: 20px;
+}
+
+.purpleHr {
+  background-color: var(--violet);
+  margin-bottom: 10px;
+  height: 4px;
+}
+
+/* --------------------------------------- */
+
+.containerTitre {
+  margin-left: 37px;
+}
+
 .title {
   font-family: var(--font-roboto-mono);
+  font-size: 4.5vw;
+  color: var(--blanc);
+  font-weight: 300;
 }
 
 .subtitle {
   font-family: var(--font-roboto-mono);
+  font-size: 2vw;
+  color: var(--violet);
 }
-.triangular-div {
+
+.yellowHr {
+  border-top: 7px solid var(--jaune);
+  background-color: var(--jaune);
+  width: 34vw;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+}
+
+.triangularDiv {
   width: 0;
   height: 0;
-  border-left: 340px solid transparent;
-  border-bottom: 350px solid var(--jaune);
-  position: relative;
-  bottom: 65px; /* Adjust position as needed */
-  rotate: 270deg;
-}
-
-.purpleHr {
-  border-top: 3px solid var(--violet);
-  color: var(--violet);
+  border-left: 60.52vw solid transparent;
+  border-top: 39.81vh solid var(--jaune);
+  position: absolute;
+  top: 0; /* Ajustez cette valeur selon les besoins */
+  right: 0; /* Ajustez cette valeur selon les besoins */
   z-index: 2;
 }
+/* ----/---- */
 
-.menuHr {
+.containerMenu {
   position: absolute;
-  top: 10px; /* Adjust as needed */
-  right: 10px; /* Adjust as needed */
-  width: 40px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  margin-top: 2.125vh; /* 17px / hauteur de la vue * 100 */
+  margin-right: 3.5vw; /* 28px / largeur de la vue * 100 */
 }
 
-.menuHr hr {
+.listMenu {
+  list-style: none;
+  padding: 0;
   margin: 0;
-  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-auto-rows: 5vh; /* 50px / hauteur de la vue * 100 */
+  gap: 1vw; /* 10px / largeur de la vue * 100 */
 }
 
-/* Tablet CSS */
+.itemMenu {
+  width: 13.1vw; /* 233px / largeur de la vue * 100 */
+  text-align: center;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-@media (min-width: 376px) and (max-width: 768px) {
+.violetMenu h2 {
+  color: var(--violet);
+}
+
+.orangeMenu h2 {
+  color: var(--orange);
+}
+
+.violetMenu {
+  background-color: var(--violet);
+}
+
+.orangeMenu {
+  background-color: var(--orange);
+}
+
+.aPropos {
+  grid-column: span 2;
+  grid-row: span 2;
+  grid-column-start: 2;
+}
+
+.contact {
+  grid-column: span 1;
+}
+
+.github {
+  grid-column: span 1;
+  grid-column-start: 3;
+}
+
+.jauneBackgroundMenu,
+.orangeBackgroundMenu,
+.violetBackgroundMenu {
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jauneBackgroundMenu {
+  background-color: var(--jaune);
+}
+
+.orangeBackgroundMenu {
+  background-color: var(--orange);
+}
+
+.violetBackgroundMenu {
+  background-color: var(--violet);
+}
+
+/* Tablet and small tablet CSS */
+
+@media (min-width: 462px) and (max-width: 768px) {
   .containerTitre {
-    margin-left: 12px;
+    margin-left: 15px;
   }
+
   .title {
-    font-family: var(--font-roboto-mono);
-    font-size: 24px;
+    font-size: 36px;
     color: var(--blanc);
   }
 
   .subtitle {
-    font-family: var(--font-roboto-mono);
-    font-size: 14px;
+    font-size: 20px;
     color: var(--violet);
   }
+
+  .yellowHr {
+    border-top: 2px solid var(--jaune);
+    background-color: var(--jaune);
+    width: 270px;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+  }
+
   .triangularDiv {
-    width: 0;
-    height: 0;
-    border-left: 180px solid transparent;
-    border-bottom: 180px solid var(--jaune);
+    border-left: 250px solid transparent;
+    border-top: 250px solid var(--jaune); /* Hauteur du triangle */
     position: absolute;
-    rotate: 270deg;
-    z-index: 2;
     align-self: flex-end;
   }
-  .menuContainer {
-    background-color: var(--orange); /* Div with var(--orange) background */
-  }
-  .yellowHr {
-    color: var(--jaune);
-    border-top: 1px solid var(--jaune);
-    background-color: var(--jaune);
-    width: 204px;
-  }
-
-  .container {
-    display: flex;
-    justify-content: center;
-    display: flex;
-    justify-content: center;
-    background-color: var(--blanc);
-    position: absolute;
-    top: 0px;
-    z-index: 2;
-    width: 100%;
-    height: 100vh;
-  }
-
-  .list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
   .item {
     width: 233px;
-    margin: 0 71px;
     text-align: center;
   }
 
-  .violet {
-    color: var(--violet);
+  .item h2 {
+    font-size: 4vw !important;
   }
-
-  .orange {
-    color: var(--orange);
+  .violetBackground h2 {
+    color: var(--blanc);
+  }
+  .jauneBackground,
+  .orangeBackground,
+  .violetBackground {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .jauneBackground {
@@ -118,60 +225,47 @@
   .violetBackground {
     background-color: var(--violet);
   }
+
+  /* Specific adjustments for small tablets */
+  @media (max-width: 520px) {
+    .triangularDiv {
+      border-left: 200px solid transparent;
+      border-top: 200px solid var(--jaune); /* Hauteur du triangle */
+    }
+  }
 }
 
 /* Mobile CSS */
 
-@media (max-width: 375px) {
+@media (max-width: 462px) {
   .containerTitre {
     margin-left: 9px;
   }
+
   .title {
-    font-family: var(--font-roboto-mono);
     font-size: 24px;
     color: var(--blanc);
   }
 
   .subtitle {
-    font-family: var(--font-roboto-mono);
     font-size: 14px;
     color: var(--violet);
   }
-  .triangularDiv {
-    width: 0;
-    height: 0;
-    border-left: 180px solid transparent;
-    border-bottom: 180px solid var(--jaune);
-    position: absolute;
-    rotate: 270deg;
-    z-index: 2;
-    align-self: flex-end;
-  }
-  .menuContainer {
-    background-color: var(--orange); /* Div with var(--orange) background */
-  }
+
   .yellowHr {
-    color: var(--jaune);
     border-top: 1px solid var(--jaune);
     background-color: var(--jaune);
     width: 204px;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
   }
 
-  .container {
-    display: flex;
-    justify-content: center;
-    background-color: var(--blanc);
+  .triangularDiv {
+    border-left: 180px solid transparent;
+    border-top: 180px solid var(--jaune); /* Hauteur du triangle */
     position: absolute;
-    top: 0px;
-    z-index: 2;
-    width: 100%;
-    height: 100vh;
-  }
-
-  .list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    align-self: flex-end;
   }
 
   .item {
@@ -179,15 +273,9 @@
     margin: 0 71px;
     text-align: center;
   }
-
-  .violet {
-    color: var(--violet);
+  .item h2 {
+    font-size: 4vw !important;
   }
-
-  .orange {
-    color: var(--orange);
-  }
-
   .jauneBackground {
     background-color: var(--jaune);
     margin-block: 25px;
@@ -211,5 +299,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .violetBackground h2 {
+    color: var(--blanc);
   }
 }
