@@ -2,12 +2,14 @@
 import React, { useState } from "react";
 import styles from "./layout.module.css";
 import useWindowSize from "./hooks/useWindowSize";
+import Link from "next/link";
 
 const Header = () => {
   const { width: responsiveWidth } = useWindowSize();
 
   return (
     <div
+      id="top"
       className={
         responsiveWidth < 769 ? styles.bigContainerCol : styles.bigContainerRow
       }
@@ -37,44 +39,48 @@ const Header = () => {
             <li
               className={`${styles.itemMenu} ${styles.violetMenu} ${styles.orangeBackgroundMenu}`}
             >
-              <div>
+              <Link href={"#ambitions"}>
                 <h2>Mes ambitions</h2>
-              </div>
+              </Link>
             </li>
             <li
               className={`${styles.itemMenu} ${styles.violetMenu} ${styles.orangeBackgroundMenu}`}
             >
-              <div>
+              <Link href={"#competences"}>
                 <h2>Compétences</h2>
-              </div>
+              </Link>
             </li>
             <li
               className={`${styles.itemMenu} ${styles.violetMenu} ${styles.orangeBackgroundMenu}`}
             >
-              <div>
+              <Link href={"#portfolio"}>
                 <h2>Portfolio</h2>
-              </div>
+              </Link>
             </li>
             <li
               className={`${styles.itemMenu} ${styles.violetMenu} ${styles.orangeBackgroundMenu} ${styles.aPropos}`}
             >
-              <div>
+              <Link href={"#about"}>
                 <h2>A propos</h2>
-              </div>
+              </Link>
             </li>
             <li
               className={`${styles.itemMenu} ${styles.violetMenu} ${styles.orangeBackgroundMenu} ${styles.contact} `}
             >
-              <div>
+              <Link href={"#contact"}>
                 <h2>Contact</h2>
-              </div>
+              </Link>
             </li>
             <li
               className={`${styles.itemMenu} ${styles.orangeMenu} ${styles.violetBackgroundMenu} ${styles.github}`}
             >
-              <div>
+              <Link
+                href={"https://github.com/Gweeny"}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <h2>Github</h2>
-              </div>
+              </Link>
             </li>
           </ul>
         </div>
@@ -96,32 +102,48 @@ const Menu = () => {
             <li
               className={`${styles.item} ${styles.violet} ${styles.jauneBackground}`}
             >
-              <h2>Mes ambitions</h2>
+              <Link href={"#ambitions"}>
+                <h2>Mes ambitions</h2>
+              </Link>
             </li>
             <li
               className={`${styles.item} ${styles.violet} ${styles.orangeBackground}`}
             >
-              <h2>Compétences</h2>
+              <Link href={"#competences"}>
+                <h2>Compétences</h2>
+              </Link>
             </li>
             <li
               className={`${styles.item} ${styles.violet} ${styles.jauneBackground}`}
             >
-              <h2>Portfolio</h2>
+              <Link href={"#porfolio"}>
+                <h2>Portfolio</h2>
+              </Link>
             </li>
             <li
               className={`${styles.item} ${styles.violet} ${styles.orangeBackground}`}
             >
-              <h2>A propos</h2>
+              <Link href={"#about"}>
+                <h2>A propos</h2>
+              </Link>
             </li>
             <li
               className={`${styles.item} ${styles.violet} ${styles.jauneBackground}`}
             >
-              <h2>Contact</h2>
+              <Link href={"#contact"}>
+                <h2>Contact</h2>
+              </Link>
             </li>
             <li
               className={`${styles.item} ${styles.orange} ${styles.violetBackground} `}
             >
-              <h2>Github</h2>
+              <Link
+                href={"https://github.com/Gweeny"}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <h2>Github</h2>
+              </Link>
             </li>
           </ul>
         </div>

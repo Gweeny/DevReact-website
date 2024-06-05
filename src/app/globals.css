@@ -9,8 +9,15 @@
   --jaune: #f4e281;
   --blanc: #f6f2ef;
   --violet: #4d243d;
+
+  --orangeFonce: #b8664d;
+  --violetFonce: #371a2c;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
 h2 {
   font-size: 1.5vw;
   font-weight: 400;
@@ -43,7 +50,7 @@ li {
 
 label {
   color: var(--blanc);
-  font-size: 12px;
+  font-size: 1vw;
   display: block;
   margin-bottom: 5px;
 }
@@ -76,7 +83,7 @@ textarea:focus {
   outline: none; /* Enlève le contour bleu */
 }
 form {
-  max-width: 500px;
+  max-width: 30vw;
   margin: 0 auto;
   padding: 20px;
   border-radius: 10px;

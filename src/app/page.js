@@ -1,16 +1,11 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import Card from "./Card";
 
 export default function Home() {
-  const couleurs = {
-    orange: "#E48162",
-    jaune: "#F4E281",
-    blanc: "#F6F2EF",
-    violet: "#4D243D",
-  };
-
   const competences = {
     frontEnd: [
       { titre: "ReactJs", pourcentage: 90 },
@@ -29,10 +24,59 @@ export default function Home() {
     ],
   };
 
+  const portfolio = [
+    {
+      titre: "MayBeaBa",
+      technos:
+        "Conception sur Figma, développement sur ReactJs, NodeJs, base de données mongoDB, stockage d’images sur Firebase",
+      contenu:
+        "Conception et développement d'un site web pour une entreprise photo. Le site inclut une connexion utilisateur, une boutique en ligne et une page administrateur pour gérer les commandes.",
+      image: "/Github.jpeg",
+    },
+    {
+      titre: "Journey",
+      technos:
+        "Conception sur Figma et Photoshop. Développement sur ReactJs pour le site, React Native pour l’application mobile, NodeJs, base de données mongoDB, stockage d’images sur Firebase.",
+      contenu:
+        "Conception, gestion de projet et développement d'un site web et d’une application mobile. Application développée pour certification à l’Afpa.",
+      image: "/Github.jpeg",
+    },
+    {
+      titre: "Site web",
+      technos: "Conception sur Figma, et développement sur NextJs",
+      contenu:
+        "Conception et développement du site sur lequel vous naviguez actuellement.",
+      image: "/Github.jpeg",
+    },
+    {
+      titre: "Pixel war",
+      technos: "Développement en JavaScript",
+      contenu: "Création d'un pixel war basé sur l'idée de Reddit",
+      image: "/Github.jpeg",
+    },
+  ];
+
+  const [openModal, setOpenModal] = useState(null);
+
+  const handleModalOpen = (index) => {
+    setOpenModal(index);
+  };
+
+  const handleModalClose = () => {
+    setOpenModal(null);
+  };
   return (
-    <main className={styles.main}>
+    <main style={{ marginTop: "3vh" }}>
+      <Link href={"#top"}>
+        <Image
+          src={"/fleche.png"}
+          className={styles.fleche}
+          width={50}
+          height={50}
+        />
+      </Link>
       <Module
-        style={{ marginTop: 20 }}
+        id={"ambitions"}
         classNameContenu={styles.contenuViolet}
         classNameTitre={styles.titreJaune}
         titre={"Mes ambitions"}
@@ -52,6 +96,7 @@ export default function Home() {
         }
       />
       <Module
+        id={"competences"}
         classNameContenu={styles.contenuJaune}
         classNameTitre={styles.titreOrange}
         titre={"Compétences"}
@@ -73,106 +118,120 @@ export default function Home() {
         }
       />
       <Module
+        id={"portfolio"}
         classNameContenu={styles.contenuViolet}
         classNameTitre={styles.titreJaune}
-        titre={"Portfolio"}
+        titre="Portfolio"
         contenu={
           <div className={styles.portfolioContainer}>
-            <div className={styles.portfolio}>
-              <h2>Projet 1</h2>
-              <div></div>
-            </div>
-            <div className={styles.portfolio}>
-              <h2>Projet 2</h2>
-              <div></div>
-            </div>
-            <div className={styles.portfolio}>
-              <h2>Projet 3</h2>
-              <div></div>
-            </div>
-            <div className={styles.portfolio}>
-              <h2>Projet 4</h2>
-              <div></div>
-            </div>
+            {portfolio.map((project, index) => (
+              <div
+                key={index}
+                className={styles.portfolio}
+                onClick={() => handleModalOpen(index)}
+              >
+                <h2>{project.titre}</h2>
+              </div>
+            ))}
           </div>
         }
       />
+      {openModal !== null && (
+        <div className={styles.modalOverlay} onClick={handleModalClose}>
+          <div
+            className={styles.modalContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Card
+              clicked={handleModalClose}
+              titre={portfolio[openModal].titre}
+              technos={portfolio[openModal].technos}
+              contenu={portfolio[openModal].contenu}
+              image={portfolio[openModal].image}
+            />
+          </div>
+        </div>
+      )}
       <Module
+        id={"about"}
         classNameContenu={styles.contenuJaune}
         classNameTitre={styles.titreOrange}
         titre={"A propos"}
         contenu={
           <>
-            <div className={styles.about}>
-              <div className={styles.aboutTitre}>
-                <h2>Formation</h2>
-              </div>
-              <p>
-                Titulaire d'un diplôme de Concepteur Développeur d'Applications
-                de l'AFPA Bègles, j'ai acquis une solide formation en
-                développement web au cours d'un programme intensif. Maîtrisant
-                des langages tels que ReactJS, NodeJS, PHP et Java, je suis
-                prête à mettre mes compétences en pratique dans le monde
-                dynamique du web.
-                <br />
-                <br />
-                Animée par une curiosité insatiable, j'ai également exploré le
-                domaine de l'animation 3D et des effets visuels. Cette double
-                expertise me permet d'aborder le développement web avec une
-                perspective unique, alliant rigueur technique et sensibilité
-                créative.
-                <br />
-                <br />
-                Motivée et enthousiaste, je suis à la recherche d'un poste
-                stimulant au sein d'une entreprise innovante où je pourrai
-                m'épanouir et contribuer à des projets passionnants.
-              </p>
-            </div>
+            <AboutSection
+              title="Formation"
+              content={
+                <>
+                  Titulaire d'un diplôme de Concepteur Développeur
+                  d'Applications de l'AFPA Bègles, j'ai acquis une solide
+                  formation en développement web au cours d'un programme
+                  intensif. Maîtrisant des langages tels que ReactJS, NodeJS,
+                  PHP et Java, je suis prête à mettre mes compétences en
+                  pratique dans le monde dynamique du web.
+                  <br />
+                  <br />
+                  Animée par une curiosité insatiable, j'ai également exploré le
+                  domaine de l'animation 3D et des effets visuels. Cette double
+                  expertise me permet d'aborder le développement web avec une
+                  perspective unique, alliant rigueur technique et sensibilité
+                  créative.
+                  <br />
+                  <br />
+                  Motivée et enthousiaste, je suis à la recherche d'un poste
+                  stimulant au sein d'une entreprise innovante où je pourrai
+                  m'épanouir et contribuer à des projets passionnants.
+                </>
+              }
+            />
 
-            <div className={styles.about}>
-              <div className={styles.aboutTitre}>
-                <h2>Expérience</h2>
-              </div>
-              <p>
-                Immergée dans un stage captivant de trois mois au sein d'une
-                agence web spécialisée en ReactJS, React Native et Firebase,
-                j'ai eu le privilège de découvrir l'intégralité du processus de
-                développement, de la rédaction du cahier des charges à la mise
-                en œuvre concrète.
-                <br />
-                <br />
-                Mon implication m'a également permis d'explorer les subtilités
-                du TypeScript et d'affiner mes compétences avec le framework CSS
-                Tailwind. Cette expérience enrichissante m'a offert
-                l'opportunité de mettre en pratique mes connaissances, de
-                contribuer à des projets innovants et de développer une
-                expertise précieuse dans l'univers du développement web moderne.
-              </p>
-            </div>
-            <div className={styles.about}>
-              <div className={styles.aboutTitre}>
-                <h2>Loisirs</h2>
-              </div>
-              <p>
-                En dehors de l'écran, ma vie est un mix éclectique. Je laisse
-                les touches du piano danser sous mes doigts, j'explore les
-                rythmes de la Kizomba et de la Bachata sur la piste, et reviens
-                tout juste d'un voyage inspirant en Inde. Côté détente, rien de
-                mieux que de me plonger dans l'univers palpitant de l'e-sport.
-                Voilà, c'est moi en quelques notes !
-              </p>
-            </div>
+            <AboutSection
+              title="Expérience"
+              content={
+                <>
+                  Immergée dans un stage captivant de trois mois au sein d'une
+                  agence web spécialisée en ReactJS, React Native et Firebase,
+                  j'ai eu le privilège de découvrir l'intégralité du processus
+                  de développement, de la rédaction du cahier des charges à la
+                  mise en œuvre concrète.
+                  <br />
+                  <br />
+                  Mon implication m'a également permis d'explorer les subtilités
+                  du TypeScript et d'affiner mes compétences avec le framework
+                  CSS Tailwind. Cette expérience enrichissante m'a offert
+                  l'opportunité de mettre en pratique mes connaissances, de
+                  contribuer à des projets innovants et de développer une
+                  expertise précieuse dans l'univers du développement web
+                  moderne.
+                </>
+              }
+            />
+            <AboutSection
+              style={{ marginBottom: 30 }}
+              title="Loisirs"
+              content={
+                <>
+                  En dehors de l'écran, ma vie est un mix éclectique. Je laisse
+                  les touches du piano danser sous mes doigts, j'explore les
+                  rythmes de la Kizomba et de la Bachata sur la piste, et
+                  reviens tout juste d'un voyage inspirant en Inde. Côté
+                  détente, rien de mieux que de me plonger dans l'univers
+                  palpitant de l'e-sport. Voilà, c'est moi en quelques notes !
+                </>
+              }
+            />
           </>
         }
       />
       <Module
+        id={"contact"}
         classNameContenu={styles.contenuViolet}
         classNameTitre={styles.titreJaune}
         titre={"Contact"}
         contenu={
           <>
             <div>
-              <div>
+              <div style={{ display: "flex", justifyContent: "center" }}>
                 <Oval className={styles.oval1}>
                   <Oval className={styles.oval2}>
                     <Oval className={styles.oval3}>
@@ -182,10 +241,45 @@ export default function Home() {
                             <h2>Samya Hussain</h2>
                             <h2>E-Mail : samya.hussain@hotmail.fr</h2>
                           </div>
-                          <div className={styles.ImagesContainer}>
-                            <img src="test" alt="LinkedIn" />
-                            <img src="test" alt="Indeed" />
-                            <img src="test" alt="GitHub" />
+                          <div className={styles.imagesContainer}>
+                            <Link
+                              href={"https://github.com/Gweeny"}
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              <Image
+                                src={"/Github.jpeg"}
+                                width={50}
+                                height={50}
+                                alt="Github"
+                              />
+                            </Link>
+                            <Link
+                              href={
+                                "https://fr.linkedin.com/in/samya-hussain-515b8415b"
+                              }
+                              rel="noopener noreferrer"
+                              target="blank"
+                            >
+                              <Image
+                                src={"/LinkedIn.png"}
+                                width={50}
+                                height={50}
+                                alt="linkedin"
+                              />
+                            </Link>
+                            <Link
+                              href={"/CV_Samya_Hussain.pdf"}
+                              rel="noopener noreferrer"
+                              target="blank"
+                            >
+                              <Image
+                                src={"/CVIcone.png"}
+                                width={50}
+                                height={50}
+                                alt="CVICONE"
+                              />
+                            </Link>
                           </div>
                         </div>
                       </Oval>
@@ -208,17 +302,71 @@ const Module = ({
   classNameTitre,
   classNameContenu,
   style,
+  id,
 }) => {
+  const [openModal, setOpenModal] = useState(null);
+
+  const portfolio = [
+    {
+      titre: "MayBeaBa",
+      technos:
+        "ReactJs, NodeJs, base de données mongoDB, stockage d’images sur Firebase",
+      contenu:
+        "Conception et développement d'un site web pour une entreprise photo. Le site inclut une boutique en ligne.",
+      image: "/Github.jpeg",
+    },
+    {
+      titre: "Journey",
+      technos:
+        "ReactJs pour le site, React Native pour l’application mobile, NodeJs, base de données mongoDB, stockage d’images sur Firebase",
+      contenu:
+        "Conception, gestion de projet et développement d'un site web et d’une application mobile Application développée pour certification à l’Afpa.",
+      image: "/Github.jpeg",
+    },
+    {
+      titre: "Site web",
+      technos: "NextJs",
+      contenu:
+        "Conception et développement du site sur lequel vous naviguez actuellement.",
+      image: "/Github.jpeg",
+    },
+  ];
+
+  const handleModalOpen = (index) => {
+    setOpenModal(index);
+  };
+
+  const handleModalClose = () => {
+    setOpenModal(null);
+  };
+
   return (
     <>
-      <div className={styles.moduleContainer} style={style}>
-        <div style={{ position: "relative", display: "flex", zIndex: 1 }}>
+      <div id={id} className={styles.moduleContainer} style={style}>
+        <div style={{ position: "relative", display: "flex" }}>
           <div className={classNameTitre}>
             <h2>{titre}</h2>
           </div>
           <div className={classNameContenu}>{contenu}</div>
         </div>
       </div>
+
+      {openModal !== null && (
+        <div className={styles.modalOverlay} onClick={handleModalClose}>
+          <div
+            className={styles.modalContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Card
+              clicked={handleModalClose}
+              titre={portfolio[openModal].titre}
+              technos={portfolio[openModal].technos}
+              contenu={portfolio[openModal].contenu}
+              image={portfolio[openModal].image}
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 };
@@ -235,50 +383,113 @@ const CompétencesSection = ({ titre, compétences }) => {
 };
 
 const Jauge = ({ titre, pourcentage }) => {
+  const barreRef = useRef(null);
+
+  const handleScroll = () => {
+    const { top, bottom } = barreRef.current.getBoundingClientRect();
+    const isVisible = top < window.innerHeight && bottom >= 0;
+
+    if (isVisible) {
+      barreRef.current.style.width = `${pourcentage}%`;
+    } else {
+      barreRef.current.style.width = "0";
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [pourcentage]);
+
   return (
     <div className={styles.jauge}>
       <h3>{titre}</h3>
       <div className={styles.barreFond}>
-        <div
-          className={styles.barreRemplie}
-          style={{
-            width: `${pourcentage}%`,
-          }}
-        ></div>
+        <div ref={barreRef} className={styles.barreRemplie}></div>
       </div>
     </div>
   );
 };
 
+const AboutSection = ({ title, content, style }) => {
+  const [isClicked, setIsClicked] = useState(false);
+
+  return (
+    <div className={styles.about}>
+      <div
+        style={{
+          ...style,
+          ...(isClicked ? { height: "7vw" } : { height: "12vw" }),
+          transition: "1s",
+        }}
+        className={styles.aboutTitre}
+        onClick={() => setIsClicked(!isClicked)}
+      >
+        <h2>{title}</h2>
+      </div>
+      <p className={isClicked ? styles.visible : styles.hidden}>{content}</p>
+    </div>
+  );
+};
 const FormulaireContact = () => {
   const validateEmail = (email) => {
     return /^[\w-]+(?:\.[\w-]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,}$/.test(email);
   };
+
   const [email, setEmail] = useState("");
   const [nom, setNom] = useState("");
   const [prenom, setPrenom] = useState("");
   const [message, setMessage] = useState("");
   const [emailValid, setEmailValid] = useState(true);
+  const [submissionStatus, setSubmissionStatus] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateEmail(email)) {
       setEmailValid(false);
       return;
     }
+    setEmailValid(true);
 
-    console.log("Email valide. Envoyer le formulaire...");
+    const formData = {
+      nom: nom,
+      prenom: prenom,
+      email,
+      message,
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmissionStatus("Email envoyé avec succès !");
+        setEmail("");
+        setNom("");
+        setPrenom("");
+        setMessage("");
+      } else {
+        setSubmissionStatus("Échec de l'envoi de l'email.");
+      }
+    } catch (error) {
+      setSubmissionStatus("Erreur lors de l'envoi de l'email.");
+    }
   };
 
   return (
     <div>
       <h2 className={styles.contactTitle}>Formulaire de Contact</h2>
       <div>
-        <form
-          onSubmit={handleSubmit}
-          // action="/my-handling-form-page"
-          method="post"
-        >
+        <form onSubmit={handleSubmit} method="post">
           <ul>
             <li>
               <label htmlFor="mail">Email:</label>
@@ -294,22 +505,21 @@ const FormulaireContact = () => {
                 <span className={styles.errorMsg}>Adresse e-mail invalide</span>
               )}
             </li>
-
             <li>
               <label htmlFor="nom">Nom:</label>
               <input
                 type="text"
-                id="name"
+                id="nom"
                 name="user_nom"
                 value={nom}
                 onChange={(e) => setNom(e.target.value)}
               />
             </li>
             <li>
-              <label htmlFor="Prenom">Prénom:</label>
+              <label htmlFor="prenom">Prénom:</label>
               <input
                 type="text"
-                id="name"
+                id="prenom"
                 name="user_prenom"
                 value={prenom}
                 onChange={(e) => setPrenom(e.target.value)}
@@ -329,10 +539,12 @@ const FormulaireContact = () => {
             </li>
           </ul>
         </form>
+        {submissionStatus && <p>{submissionStatus}</p>}
       </div>
     </div>
   );
 };
+
 const Oval = ({ children, className }) => {
   return <div className={`${styles.oval} ${className}`}>{children}</div>;
 };
