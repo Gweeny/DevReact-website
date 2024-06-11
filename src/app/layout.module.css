@@ -25,7 +25,9 @@
   align-items: center;
   margin-top: 50px;
 }
-
+.listMenu li {
+  margin-bottom: 0;
+}
 /* Menu styles */
 .menuHr {
   position: absolute;

@@ -32,6 +32,7 @@ export default function Home() {
       contenu:
         "Conception et développement d'un site web pour une entreprise photo. Le site inclut une connexion utilisateur, une boutique en ligne et une page administrateur pour gérer les commandes.",
       image: "/Github.jpeg",
+      onClickImage: "MayBeaBa",
     },
     {
       titre: "Journey",
@@ -39,7 +40,8 @@ export default function Home() {
         "Conception sur Figma et Photoshop. Développement sur ReactJs pour le site, React Native pour l’application mobile, NodeJs, base de données mongoDB, stockage d’images sur Firebase.",
       contenu:
         "Conception, gestion de projet et développement d'un site web et d’une application mobile. Application développée pour certification à l’Afpa.",
-      image: "/Github.jpeg",
+      image: "/Journey.png",
+      onClickImage: "Journey",
     },
     {
       titre: "Site web",
@@ -47,12 +49,14 @@ export default function Home() {
       contenu:
         "Conception et développement du site sur lequel vous naviguez actuellement.",
       image: "/Github.jpeg",
+      onClickImage: "",
     },
     {
       titre: "Pixel war",
       technos: "Développement en JavaScript",
       contenu: "Création d'un pixel war basé sur l'idée de Reddit",
-      image: "/Github.jpeg",
+      image: "/pixelart.png",
+      onClickImage: "PixelWar",
     },
   ];
 
@@ -89,9 +93,10 @@ export default function Home() {
             <br />
             <br />
             <br />
-            Diplômée récente en conceptrice développeuse d’applications, je suis
-            impatiente de mettre à profit mes connaissances et mon enthousiasme
-            pour contribuer à la réussite d'une entreprise ambitieuse.
+            Récemment diplômée en tant que conceptrice développeuse
+            d’applications, je suis impatiente de mettre à profit mes
+            connaissances et mon enthousiasme pour contribuer à la réussite
+            d'une entreprise ambitieuse.
           </p>
         }
       />
@@ -148,6 +153,7 @@ export default function Home() {
               technos={portfolio[openModal].technos}
               contenu={portfolio[openModal].contenu}
               image={portfolio[openModal].image}
+              onClickImage={portfolio[openModal].onClickImage}
             />
           </div>
         </div>
@@ -482,6 +488,7 @@ const FormulaireContact = () => {
       }
     } catch (error) {
       setSubmissionStatus("Erreur lors de l'envoi de l'email.");
+      console.log(error);
     }
   };
 

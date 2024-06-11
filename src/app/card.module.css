@@ -54,5 +54,11 @@
   text-align: center;
   color: var(--blanc);
   width: 27vw;
-  height: 20vh;
+}
+.present:hover {
+  background-color: var(--orangeFonce);
+}
+
+.testimage:hover {
+  filter: brightness(1.1);
 }

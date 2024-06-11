@@ -15,18 +15,20 @@ const Header = () => {
       }
     >
       <div className={styles.containerTitre}>
-        <h1 className={styles.title}>SAMYA HUSSAIN</h1>
-        <hr className={styles.yellowHr} />
-        {responsiveWidth > 658 ? (
-          <h2 style={{ marginBlock: 6 }} className={styles.subtitle}>
-            Conceptrice, développeuse d'applications
-          </h2>
-        ) : (
-          <>
-            <h2 className={styles.subtitle}>Conceptrice, </h2>
-            <h2 className={styles.subtitle}>développeuse d'applications</h2>
-          </>
-        )}
+        <Link href={"/"}>
+          <h1 className={styles.title}>SAMYA HUSSAIN</h1>
+          <hr className={styles.yellowHr} />
+          {responsiveWidth > 658 ? (
+            <h2 style={{ marginBlock: 6 }} className={styles.subtitle}>
+              Conceptrice, développeuse d'applications
+            </h2>
+          ) : (
+            <>
+              <h2 className={styles.subtitle}>Conceptrice, </h2>
+              <h2 className={styles.subtitle}>développeuse d'applications</h2>
+            </>
+          )}
+        </Link>
       </div>
 
       <div className={styles.triangularDiv} />
@@ -36,52 +38,57 @@ const Header = () => {
       ) : (
         <div className={styles.containerMenu}>
           <ul className={styles.listMenu}>
-            <li
+            <Link
+              href={"/#ambitions"}
+              passHref
               className={`${styles.itemMenu} ${styles.violetMenu} ${styles.orangeBackgroundMenu}`}
             >
-              <Link href={"#ambitions"}>
+              <li>
                 <h2>Mes ambitions</h2>
-              </Link>
-            </li>
-            <li
+              </li>
+            </Link>
+            <Link
+              href={"/#competences"}
               className={`${styles.itemMenu} ${styles.violetMenu} ${styles.orangeBackgroundMenu}`}
             >
-              <Link href={"#competences"}>
+              <li>
                 <h2>Compétences</h2>
-              </Link>
-            </li>
-            <li
+              </li>
+            </Link>
+            <Link
+              href={"/#portfolio"}
               className={`${styles.itemMenu} ${styles.violetMenu} ${styles.orangeBackgroundMenu}`}
             >
-              <Link href={"#portfolio"}>
+              <li>
                 <h2>Portfolio</h2>
-              </Link>
-            </li>
-            <li
+              </li>
+            </Link>
+            <Link
+              href={"/#about"}
               className={`${styles.itemMenu} ${styles.violetMenu} ${styles.orangeBackgroundMenu} ${styles.aPropos}`}
             >
-              <Link href={"#about"}>
+              <li>
                 <h2>A propos</h2>
-              </Link>
-            </li>
-            <li
+              </li>
+            </Link>
+            <Link
+              href={"/#contact"}
               className={`${styles.itemMenu} ${styles.violetMenu} ${styles.orangeBackgroundMenu} ${styles.contact} `}
             >
-              <Link href={"#contact"}>
+              <li>
                 <h2>Contact</h2>
-              </Link>
-            </li>
-            <li
+              </li>
+            </Link>
+            <Link
+              href={"https://github.com/Gweeny"}
+              rel="noopener noreferrer"
+              target="_blank"
               className={`${styles.itemMenu} ${styles.orangeMenu} ${styles.violetBackgroundMenu} ${styles.github}`}
             >
-              <Link
-                href={"https://github.com/Gweeny"}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
+              <li>
                 <h2>Github</h2>
-              </Link>
-            </li>
+              </li>
+            </Link>
           </ul>
         </div>
       )}
@@ -99,52 +106,56 @@ const Menu = () => {
       {isClicked ? (
         <div className={styles.container}>
           <ul className={styles.list} onClick={() => setIsClicked(!isClicked)}>
-            <li
+            <Link
+              href={"/#ambitions"}
               className={`${styles.item} ${styles.violet} ${styles.jauneBackground}`}
             >
-              <Link href={"#ambitions"}>
+              <li>
                 <h2>Mes ambitions</h2>
-              </Link>
-            </li>
-            <li
+              </li>
+            </Link>
+            <Link
+              href={"#competences"}
               className={`${styles.item} ${styles.violet} ${styles.orangeBackground}`}
             >
-              <Link href={"#competences"}>
+              <li>
                 <h2>Compétences</h2>
-              </Link>
-            </li>
-            <li
+              </li>
+            </Link>
+            <Link
+              href={"#porfolio"}
               className={`${styles.item} ${styles.violet} ${styles.jauneBackground}`}
             >
-              <Link href={"#porfolio"}>
+              <li>
                 <h2>Portfolio</h2>
-              </Link>
-            </li>
-            <li
+              </li>
+            </Link>
+            <Link
+              href={"#about"}
               className={`${styles.item} ${styles.violet} ${styles.orangeBackground}`}
             >
-              <Link href={"#about"}>
+              <li>
                 <h2>A propos</h2>
-              </Link>
-            </li>
-            <li
+              </li>
+            </Link>
+            <Link
+              href={"#contact"}
               className={`${styles.item} ${styles.violet} ${styles.jauneBackground}`}
             >
-              <Link href={"#contact"}>
+              <li>
                 <h2>Contact</h2>
-              </Link>
-            </li>
-            <li
+              </li>
+            </Link>
+            <Link
+              href={"https://github.com/Gweeny"}
+              rel="noopener noreferrer"
+              target="_blank"
               className={`${styles.item} ${styles.orange} ${styles.violetBackground} `}
             >
-              <Link
-                href={"https://github.com/Gweeny"}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
+              <li>
                 <h2>Github</h2>
-              </Link>
-            </li>
+              </li>
+            </Link>
           </ul>
         </div>
       ) : (

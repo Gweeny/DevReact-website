@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styles from "./card.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
-const Card = ({ titre, contenu, technos, clicked, image, onMouseEnter }) => {
+const Card = ({ titre, contenu, technos, clicked, image, onClickImage }) => {
   return (
     <div className={styles.background}>
       <div style={{ display: "flex", flexDirection: "row" }}>
@@ -33,12 +34,18 @@ const Card = ({ titre, contenu, technos, clicked, image, onMouseEnter }) => {
           <p>Techologies utilisées : {technos}</p>
         </div>
         <div className={styles.present}>
-          <Image
-            onMouseEnter={onMouseEnter}
-            src={image}
-            width={100}
-            height={100}
-          />
+          <Link href={onClickImage}>
+            <div style={{ width: "100%", height: "auto" }}>
+              <Image
+                className={styles.testimage}
+                src={image}
+                layout="responsive"
+                width={100}
+                height={100}
+                alt="Description de l'image"
+              />
+            </div>
+          </Link>
         </div>
       </div>
     </div>
