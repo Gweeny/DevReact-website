@@ -100,3 +100,21 @@ button {
   display: block;
   margin: 0 auto;
 }
+
+@media (max-width: 462px) {
+  h2 {
+    font-size: 14px;
+  }
+  label {
+    color: var(--blanc);
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+  }
+  form {
+    max-width: 70vw;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+  }
+}

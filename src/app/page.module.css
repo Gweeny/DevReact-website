@@ -185,6 +185,9 @@
 }
 /* About */
 .aboutTitre {
+  height: 12vw;
+}
+.aboutTitre {
   background-color: var(--orange);
   cursor: pointer;
   display: flex;
@@ -451,6 +454,9 @@
     height: 97px;
   }
 
+  .aboutTitre {
+    height: 25vw;
+  }
   .aboutTitre h2 {
     font-size: 14px;
   }
@@ -506,8 +512,11 @@
 
   .contactTitle {
     color: var(--blanc);
-    font-size: 20px;
+    font-size: 20px !important;
     text-align: center;
     margin-top: 43px;
+  }
+  .fleche {
+    left: 86vw;
   }
 }
