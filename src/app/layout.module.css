@@ -73,15 +73,20 @@
 }
 
 .triangularDiv {
-  width: 0;
-  height: 0;
-  border-left: 60.52vw solid transparent;
-  border-top: 39.81vh solid var(--jaune);
-  position: absolute;
+  width: 60vw; /* Largeur du triangle */
+  height: 20vw; /* Hauteur du triangle */
+  background-color: var(--jaune); /* Couleur de fond */
+  clip-path: polygon(
+    0% 0%,
+    100% 100%,
+    100% 0%
+  ); /* Définition de la forme du triangle */
+  position: absolute; /* Position absolue par rapport à son parent */
   top: 0;
   right: 0;
-  z-index: 2;
+  z-index: 2; /* Indice de profondeur pour le positionnement z */
 }
+
 /* ----/---- */
 
 .containerMenu {

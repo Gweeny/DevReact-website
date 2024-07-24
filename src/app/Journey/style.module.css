@@ -95,7 +95,7 @@
 
 .calendarInside .react-calendar .react-calendar__navigation {
   display: flex !important;
-  background-color: red;
+  background-color: red !important;
 }
 
 .calendarInside .react-calendar__navigation button {

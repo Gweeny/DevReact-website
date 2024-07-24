@@ -1,0 +1,36 @@
+.title {
+  font-size: 4vw;
+  font-family: reenie Beanie;
+  font-weight: 100;
+  color: #3182a4;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.left p {
+  color: var(--violet);
+  font-family: var(--font-roboto-mono);
+  font-size: 1.2vw;
+  font-weight: 400;
+  margin: 6vw;
+  padding: 4.89vh 0 9.89vh;
+}
+
+.right {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.right p {
+  color: var(--violet);
+  font-family: var(--font-roboto-mono);
+  font-size: 1.2vw;
+  font-weight: 400;
+  margin: 6vw;
+  padding: 4.89vh 0 9.89vh;
+}

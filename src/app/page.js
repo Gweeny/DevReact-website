@@ -4,8 +4,12 @@ import styles from "./page.module.css";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Card from "./Card";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Home() {
+  const notify = () => toast("Message envoyé ! ");
+
   const competences = {
     frontEnd: [
       { titre: "ReactJs", pourcentage: 90 },
@@ -31,7 +35,7 @@ export default function Home() {
         "Conception sur Figma, développement sur ReactJs, NodeJs, base de données mongoDB, stockage d’images sur Firebase",
       contenu:
         "Conception et développement d'un site web pour une entreprise photo. Le site inclut une connexion utilisateur, une boutique en ligne et une page administrateur pour gérer les commandes.",
-      image: "/Github.jpeg",
+      image: "/Maybeaba.png",
       onClickImage: "MayBeaBa",
     },
     {
@@ -48,7 +52,7 @@ export default function Home() {
       technos: "Conception sur Figma, et développement sur NextJs",
       contenu:
         "Conception et développement du site sur lequel vous naviguez actuellement.",
-      image: "/Github.jpeg",
+      image: "/portfolio.png",
       onClickImage: "",
     },
     {
@@ -483,8 +487,12 @@ const FormulaireContact = () => {
         setNom("");
         setPrenom("");
         setMessage("");
+        toast.success("Message envoyé !");
       } else {
         setSubmissionStatus("Échec de l'envoi de l'email.");
+        toast.warning(
+          "Un problème est survenu lors de l'envoi de votre message, veuillez réessayer."
+        );
       }
     } catch (error) {
       setSubmissionStatus("Erreur lors de l'envoi de l'email.");
@@ -494,6 +502,7 @@ const FormulaireContact = () => {
 
   return (
     <div>
+      <ToastContainer autoClose={500} />
       <h2 className={styles.contactTitle}>Formulaire de Contact</h2>
       <div>
         <form onSubmit={handleSubmit} method="post">
@@ -546,7 +555,7 @@ const FormulaireContact = () => {
             </li>
           </ul>
         </form>
-        {submissionStatus && <p>{submissionStatus}</p>}
+        {submissionStatus}
       </div>
     </div>
   );

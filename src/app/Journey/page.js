@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Styles from "./style.module.css";
 import Positions from "./Positions";
@@ -569,6 +569,7 @@ const MontagnesStickers = (props) => {
         left: "35vw",
         bottom: "7.3vw",
         backgroundColor: " #159dd2",
+        zIndex: "1000",
       }}
     >
       {montagnes.map((item, index) => (
@@ -599,6 +600,7 @@ const ArbresStickers = (props) => {
         bottom: "7.3vw",
         left: "35vw",
         backgroundColor: " #159dd2",
+        zIndex: "1000",
       }}
     >
       {arbres.map((item, index) => (
@@ -629,6 +631,7 @@ const BatimentSticker = (props) => {
         bottom: "7.3vw",
         left: "29vw",
         backgroundColor: " #159dd2",
+        zIndex: "1000",
       }}
     >
       {batiments.map((item, index) => (
