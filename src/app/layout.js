@@ -2,6 +2,8 @@
 import { Roboto_Mono, League_Spartan } from "next/font/google";
 import "./globals.css";
 import Header from "./Header";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 //variables :
 const robotoMono = Roboto_Mono({ weight: ["400", "700"], subsets: ["latin"] });
 const leagueSpartan = League_Spartan({
@@ -23,6 +25,7 @@ export default function RootLayout({ children }) {
       <body className={`${robotoMono.className} ${leagueSpartan.className}`}>
         <Header />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
