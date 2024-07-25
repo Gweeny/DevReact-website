@@ -51,45 +51,7 @@ const Page = () => {
         {/* ICI LE TOP Avec Journey */}
         {/* ICI LE MID avec la carte  */}
 
-        <div
-          style={
-            !isMobileLayout
-              ? {
-                  width: "80vw",
-                  height: "30vw",
-                  border: "1px solid #159dd2",
-                  boxShadow: "6px 6px 0px 0px #0e81ae",
-                  overflow: "hidden",
-                  background: "#397BC9",
-                  background:
-                    "-moz-linear-gradient(top, #397BC9 0%, #95BDD7 69%, #2E7B84 100%)",
-                  background:
-                    "-webkit-linear-gradient(top, #397BC9 0%, #95BDD7 69%, #2E7B84 100%)",
-                  background:
-                    "linear-gradient(to bottom, #397BC9 0%, #95BDD7 69%, #2E7B84 100%)",
-                  display: "flex",
-                  flexWrap: "wrap",
-                }
-              : {
-                  width: "90%",
-                  height: "90%",
-                  border: "1px solid #159dd2",
-                  boxShadow: "6px 6px 0px 0px #0e81ae",
-                  overflow: "hidden",
-                  background: "#397BC9",
-                  background:
-                    "-moz-linear-gradient(top, #397BC9 0%, #95BDD7 69%, #2E7B84 100%)",
-                  background:
-                    "-webkit-linear-gradient(top, #397BC9 0%, #95BDD7 69%, #2E7B84 100%)",
-                  background:
-                    "linear-gradient(to bottom, #397BC9 0%, #95BDD7 69%, #2E7B84 100%)",
-                  display: "flex",
-                  flexWrap: "wrap",
-                }
-          }
-        >
-          {imageList}
-        </div>
+        <div className={Styles.card}>{imageList}</div>
         {/* ICI LE BAS avec la navbar  */}
 
         <div
@@ -564,10 +526,7 @@ const MontagnesStickers = (props) => {
         display: "flex",
         justifyContent: "space-around",
         alignItems: "flex-end",
-        width: 1140,
-        position: "absolute",
-        left: "35vw",
-        bottom: "7.3vw",
+
         backgroundColor: " #159dd2",
         zIndex: "1000",
       }}
@@ -595,10 +554,7 @@ const ArbresStickers = (props) => {
         display: "flex",
         justifyContent: "space-around",
         alignItems: "flex-end",
-        width: 1140,
-        position: "absolute",
-        bottom: "7.3vw",
-        left: "35vw",
+
         backgroundColor: " #159dd2",
         zIndex: "1000",
       }}
@@ -626,10 +582,8 @@ const BatimentSticker = (props) => {
         display: "flex",
         justifyContent: "space-around",
         alignItems: "flex-end",
-        width: "68vw",
-        position: "absolute",
-        bottom: "7.3vw",
-        left: "29vw",
+        width: "100vw",
+
         backgroundColor: " #159dd2",
         zIndex: "1000",
       }}

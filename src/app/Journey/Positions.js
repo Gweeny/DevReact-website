@@ -35,13 +35,7 @@ const Positions = (props) => {
           />
           {isOpen && (
             <>
-              <Image
-                width={50}
-                height={50}
-                style={{ marginLeft: 50 }}
-                src="/line.svg"
-                alt="ling"
-              />
+              <Image width={50} height={50} src="/line.svg" alt="ling" />
               <StickersLineOne
                 onClickOpenMontagnes={props.onClickOpenMontagnes}
                 onClickOpenPalmier={props.onClickOpenPalmier}
@@ -65,7 +59,7 @@ export const StickersLineOne = (props) => {
           display: "flex",
           justifyContent: "space-around",
           alignItems: "flex-start",
-          width: 730,
+          width: "50vw",
         }}
       >
         <div style={{ display: "flex", flexDirection: "column-reverse" }}>

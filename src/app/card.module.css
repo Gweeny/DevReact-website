@@ -62,3 +62,59 @@
 .testimage:hover {
   filter: brightness(1.1);
 }
+
+.closeButton {
+  display: flex;
+  flex-direction: column;
+  background-color: #4d243d;
+  width: 2vw;
+  height: 2vw;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1000px; /* Utilisation de px pour un arrondi complet */
+  margin-left: 1vw;
+  position: absolute;
+  left: 31vw;
+  cursor: pointer;
+  color: #e48162; /* Couleur du texte */
+  transition: background-color 0.3s ease-in-out; /* Transition pour le hover */
+}
+
+.closeButton:hover {
+  background-color: #6d3d5b; /* Changement de couleur au survol */
+}
+.closeButton span {
+  color: #e48162; /* Assurez-vous que le "x" est visible */
+  font-size: 1.2rem; /* Taille de la police ajustée pour le "x" */
+}
+
+@media (max-width: 480px) {
+  .background {
+    width: 100vw;
+    height: 100vw;
+  }
+
+  .contenu {
+    width: 95vw;
+    height: 95vw;
+    padding: 1rem;
+  }
+  .present {
+    width: 80vw;
+  }
+
+  .background h2 {
+    font-size: 3.5vw;
+  }
+
+  .contenu p,
+  .technos p {
+    font-size: 4vw;
+  }
+
+  .closeButton {
+    width: 7vw;
+    height: 7vw;
+    font-size: 3vw; /* Ajuster la taille du "x" pour être plus visible */
+  }
+}

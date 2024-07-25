@@ -178,3 +178,50 @@
   border: 2px solid rgb(2, 68, 105);
   color: rgb(255, 255, 255);
 }
+
+.card {
+  width: 80vw;
+  height: 30vw;
+  border: 1px solid #159dd2;
+  box-shadow: 6px 6px 0px 0px #0e81ae;
+  overflow: hidden;
+  background: #397bc9;
+  background: -moz-linear-gradient(top, #397bc9 0%, #95bdd7 69%, #2e7b84 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #397bc9 0%,
+    #95bdd7 69%,
+    #2e7b84 100%
+  );
+  background: linear-gradient(to bottom, #397bc9 0%, #95bdd7 69%, #2e7b84 100%);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.svg {
+  width: 30vw;
+  height: 20vw;
+}
+@media (max-width: 462px) {
+  .card {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .position {
+    width: 30vw;
+  }
+  .openPlane {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: 0.3s;
+    background-color: #159dd1;
+    height: 99px;
+    margin-left: 2vw;
+  }
+  .svg {
+    width: 100vw;
+    height: 50vw;
+  }
+}

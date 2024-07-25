@@ -283,8 +283,8 @@
   .triangularDiv {
     width: 45vw; /* Largeur du triangle */
     height: 45vw; /* Hauteur du triangle */
-    border-left: 180px solid transparent;
-    border-top: 180px solid var(--jaune); /* Hauteur du triangle */
+    border-left: 150px solid transparent;
+    border-top: 150px solid var(--jaune); /* Hauteur du triangle */
     position: absolute;
     align-self: flex-end;
   }

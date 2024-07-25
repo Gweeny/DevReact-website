@@ -8,23 +8,7 @@ const Card = ({ titre, contenu, technos, clicked, image, onClickImage }) => {
     <div className={styles.background}>
       <div style={{ display: "flex", flexDirection: "row" }}>
         <h2>{titre}</h2>
-        <div
-          onClick={clicked}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            backgroundColor: "#4d243d",
-            width: "2vw",
-            height: "2vw",
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: 1000,
-            marginLeft: "1vw",
-            position: "absolute",
-            left: "31vw",
-            cursor: "pointer",
-          }}
-        >
+        <div onClick={clicked} className={styles.closeButton}>
           <div style={{ color: "#e48162" }}>x</div>
         </div>
       </div>

@@ -147,8 +147,8 @@ const PixelWar = () => {
           <div
             key={index}
             style={{
-              height: "50px",
-              width: "50px",
+              height: "2.6vw",
+              width: "2.6vw",
               borderRadius: "50%",
               border: "1px solid transparent",
               transition: "all 0.3s",

@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import Liste from "./Liste";
+import style from "./style.module.css";
 // import CreateDivInfo from "../../services/CreateDivInfo";
 
 export let codeIataDep = "";
@@ -62,7 +63,7 @@ const Map = () => {
           left: -70,
         }}
       >
-        <svg width="500px" height="350px" viewBox="0 0 1000 680">
+        <svg viewBox="0 0 1000 680" className={style.svg}>
           <g className="map-container">
             <g className="map-path">
               <a
