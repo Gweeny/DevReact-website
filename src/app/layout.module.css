@@ -33,9 +33,9 @@
   position: absolute;
   z-index: 3;
   width: 50px;
-  height: 10px;
   top: 20px;
   right: 20px;
+  cursor: pointer;
 }
 
 .purpleHr {
@@ -206,6 +206,8 @@
   }
 
   .triangularDiv {
+    width: 40vw; /* Largeur du triangle */
+    height: 30vw; /* Hauteur du triangle */
     border-left: 250px solid transparent;
     border-top: 250px solid var(--jaune); /* Hauteur du triangle */
     position: absolute;
@@ -260,12 +262,12 @@
   }
 
   .title {
-    font-size: 24px;
+    font-size: 7.5vw;
     color: var(--blanc);
   }
 
   .subtitle {
-    font-size: 14px;
+    font-size: 4.5vw;
     color: var(--violet);
   }
 
@@ -279,6 +281,8 @@
   }
 
   .triangularDiv {
+    width: 45vw; /* Largeur du triangle */
+    height: 45vw; /* Hauteur du triangle */
     border-left: 180px solid transparent;
     border-top: 180px solid var(--jaune); /* Hauteur du triangle */
     position: absolute;

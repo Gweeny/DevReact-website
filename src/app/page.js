@@ -431,12 +431,10 @@ const AboutSection = ({ title, content, style }) => {
   return (
     <div className={styles.about}>
       <div
-        style={{
-          ...style,
-          ...(isClicked ? { height: "7vw" } : { height: "12vw" }),
-          transition: "1s",
-        }}
-        className={styles.aboutTitre}
+        style={style}
+        className={`${styles.aboutTitre} ${
+          isClicked ? styles.smallHeight : styles.largeHeight
+        }`}
         onClick={() => setIsClicked(!isClicked)}
       >
         <h2>{title}</h2>
@@ -445,6 +443,7 @@ const AboutSection = ({ title, content, style }) => {
     </div>
   );
 };
+
 const FormulaireContact = () => {
   const validateEmail = (email) => {
     return /^[\w-]+(?:\.[\w-]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,}$/.test(email);

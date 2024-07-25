@@ -103,7 +103,7 @@ button {
 
 @media (max-width: 462px) {
   h2 {
-    font-size: 14px;
+    font-size: 3.7vw !important;
   }
   label {
     color: var(--blanc);
