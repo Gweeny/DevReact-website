@@ -116,5 +116,6 @@
     width: 7vw;
     height: 7vw;
     font-size: 3vw; /* Ajuster la taille du "x" pour être plus visible */
+    left: 80vw;
   }
 }

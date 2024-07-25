@@ -1,5 +1,5 @@
 .title {
-  font-size: 4vw;
+  font-size: 14vw;
   font-family: reenie Beanie;
   font-weight: 100;
   color: #3182a4;
@@ -33,4 +33,37 @@
   font-weight: 400;
   margin: 6vw;
   padding: 4.89vh 0 9.89vh;
+}
+
+.image {
+  width: 60vw;
+  height: 60vh;
+}
+
+.titre {
+  font-size: 6vw !important;
+  color: var(--violet);
+  margin-bottom: 2vw;
+  margin-left: 2vw;
+}
+@media (max-width: 462px) {
+  .right {
+    display: flex;
+    flex-direction: column;
+  }
+  .left {
+    display: flex;
+    flex-direction: column;
+  }
+  .image {
+    width: 90vw;
+    height: 30vh;
+  }
+  .right p {
+    font-size: 3vw;
+  }
+
+  .left p {
+    font-size: 3vw;
+  }
 }

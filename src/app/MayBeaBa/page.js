@@ -8,9 +8,14 @@ const page = () => {
         <h1 className={Styles.title}>MayBeaBa</h1>
       </div>
       <div>
-        <h2>La connexion : </h2>
+        <h2 className={Styles.titre}>La connexion : </h2>
         <div className={Styles.left}>
-          <Image src={"/MaybeabaConnexion.png"} width={1000} height={500} />
+          <Image
+            className={Styles.image}
+            src={"/MaybeabaConnexion.png"}
+            width={1000}
+            height={500}
+          />
           <p>
             Pour assurer la sécurité du site, j'ai implémenté une infrastructure
             de connexion robuste basée sur un serveur Express. Les mots de passe
@@ -26,9 +31,14 @@ const page = () => {
         </div>
       </div>
       <div>
-        <h2>La page administrateur :</h2>
+        <h2 className={Styles.titre}>La page administrateur :</h2>
         <div className={Styles.right}>
-          <Image src={"/MaybeabaCommandes.png"} width={1000} height={500} />
+          <Image
+            className={Styles.image}
+            src={"/MaybeabaCommandes.png"}
+            width={1000}
+            height={500}
+          />
           <p>
             La page administrateur permet de gérer efficacement toutes les
             commandes passées sur le site. Accessible uniquement aux
