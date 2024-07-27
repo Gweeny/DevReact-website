@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
         />
         <meta
           name="keywords"
-          content="ReactJS, NodeJS, Développement Web, Portfolio, DevReact Creations"
+          content="ReactJS, NodeJS, Développement Web, Portfolio, DevReact Creations, DevReact Creation"
         />
         <meta property="og:title" content="DevReact Creations" />
         <meta

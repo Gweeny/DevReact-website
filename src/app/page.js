@@ -50,8 +50,7 @@ export default function Home() {
     {
       titre: "Site web",
       technos: "Conception sur Figma, et développement sur NextJs",
-      contenu:
-        "Conception et développement du site sur lequel vous naviguez actuellement.",
+      contenu: "Creation du site sur lequel vous naviguez actuellement.",
       image: "/Portfolio.png",
       onClickImage: "",
     },
