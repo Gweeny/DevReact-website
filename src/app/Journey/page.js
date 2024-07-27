@@ -9,6 +9,8 @@ import CalendarRetourComponent from "./CalendarRetour";
 import useWindowSize from "../hooks/useWindowSize";
 import Draggable from "react-draggable";
 import Button from "./Buttons";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 let actualFileName = "";
 
@@ -40,6 +42,7 @@ const Page = () => {
 
   return (
     <>
+      <ToastContainer autoClose={500} />
       <div
         style={{
           display: "flex",
@@ -115,7 +118,16 @@ const Page = () => {
                 width={50}
                 height={50}
                 onClick={() => {
-                  toast.info("Camping");
+                  toast.info("Camping", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                  });
                 }}
                 src="/People_Poor.svg"
                 alt="people"
@@ -124,7 +136,16 @@ const Page = () => {
                 width={50}
                 height={50}
                 onClick={() => {
-                  toast.info("Chez l'habitant");
+                  toast.info("Chez l'habitant", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                  });
                 }}
                 src="/People_Medium.svg"
                 alt="people"
@@ -133,7 +154,16 @@ const Page = () => {
                 width={50}
                 height={50}
                 onClick={() => {
-                  toast.info("Hotel");
+                  toast.info("Hotel", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                  });
                 }}
                 src="/People_Rich.svg"
                 alt="people"
@@ -149,8 +179,16 @@ const Page = () => {
                 width={50}
                 height={50}
                 onClick={() => {
-                  toast.info("Budget sérré");
-                  budget = 0;
+                  toast.info("Budget sérré", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                  });
                 }}
                 src="/Money_Poor.svg"
                 alt="money"
@@ -159,8 +197,16 @@ const Page = () => {
                 width={50}
                 height={50}
                 onClick={() => {
-                  toast.info("Budget moyen");
-                  budget = 20;
+                  toast.info("Budget moyen", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                  });
                 }}
                 src="/Money_Medium.svg"
                 alt="money"
@@ -169,8 +215,16 @@ const Page = () => {
                 width={50}
                 height={50}
                 onClick={() => {
-                  toast.info("Budget large");
-                  budget = 30;
+                  toast.info("Budget large", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                  });
                 }}
                 src="/Money_Rich.svg"
                 alt="money"
@@ -302,7 +356,7 @@ export const AllStickers = ({ imageFileName }) => {
   const [visibility, setVisibility] = useState(false);
 
   const realImageFileName = imageFileName.target.src.replace(
-    "http://localhost:3000/",
+    "https://www.devreactcreations.com/",
     ""
   );
   console.log(realImageFileName);
@@ -379,7 +433,7 @@ const Images = ({
 const montagnes = [
   {
     dataId: "1",
-    src: "/Montagne_Ads.svg",
+    src: "/Montagne_AdS.svg",
     string: "card10",
     dataIcon: "1",
   },

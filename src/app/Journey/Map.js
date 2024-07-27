@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import Liste from "./Liste";
 import style from "./style.module.css";
 // import CreateDivInfo from "../../services/CreateDivInfo";
+import { ToastContainer, Zoom, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export let codeIataDep = "";
 
@@ -11,6 +13,7 @@ const Map = () => {
   //* Comme par exemple data-aeroport, data-pays et on ajoute aussi un eventListener à chaque pays de notre liste dont l'id correspond à un élément <a> sur notre map
   //* on set des attributs de styles
   //* puis grâce ou infos passées dans les éléments quand on clique CreateDivInfo (src/services/CreateDivInfo) avec le pays cliqué
+
   useEffect(() => {
     const data = Liste;
 
@@ -39,8 +42,17 @@ const Map = () => {
                 countryA.classList.add("validate");
                 countryA.addEventListener("click", (countryA) => {
                   // CreateDivInfo(countryA);
-                  console.log(countryData.CODEIATA);
                   codeIataDep = countryData.CODEIATA;
+                  toast("Pays selectionné : " + pays, {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                  });
                 });
               }
             }
@@ -54,6 +66,7 @@ const Map = () => {
 
   return (
     <>
+      <ToastContainer autoClose={1000} position="middle" transition={Zoom} />
       <div
         className="map"
         style={{
