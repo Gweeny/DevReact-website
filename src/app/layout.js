@@ -13,14 +13,17 @@ const leagueSpartan = League_Spartan({
 
 export const metadata = {
   title: "DevReact Creations",
-  description: "Obtenez un site web qui vous ressemble !",
+  description:
+    "Développez votre présence en ligne avec DevReact Creations, spécialiste en creation de sites web personnalisés utilisant ReactJS et NodeJS.",
   openGraph: {
     type: "website",
     locale: "fr_FR",
     url: "https://www.devreactcreations.com/",
     site_name: "DevReact Creations",
     title: "DevReact Creations",
-    description: "Obtenez un site web qui vous ressemble !",
+    image: "https://zupimages.net/up/24/31/kceq.png",
+    description:
+      "Développez votre présence en ligne avec DevReact Creations, spécialiste en creation de sites web personnalisés utilisant ReactJS et NodeJS.",
   },
 };
 
@@ -29,23 +32,20 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <head>
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="DevReact Creations" />
         <meta
           name="description"
-          content="Obtenez un site web qui vous ressemble !"
+          content="Développez votre présence en ligne avec DevReact Creations, spécialiste en creation de sites web personnalisés utilisant ReactJS et NodeJS."
         />
         <meta
           name="keywords"
-          content="ReactJS, NodeJS, Développement Web, Portfolio, DevReact Creations, DevReact Creation"
+          content="ReactJS, NodeJS, Développement Web, Portfolio, DevReact Creations, DevReact Creation, DevReact, site web react, react website"
         />
-        <meta property="og:title" content="DevReact Creations" />
-        <meta
-          property="og:description"
-          content="Obtenez un site web qui vous ressemble !"
-        />
+
         <meta property="og:url" content="https://www.devreactcreations.com" />
         <meta
           property="og:image"
-          content="https://www.devreactcreations.com/images/preview.jpg"
+          content="https://zupimages.net/viewer.php?id=24/31/kceq.png"
         />
         <meta property="og:type" content="website" />
 
