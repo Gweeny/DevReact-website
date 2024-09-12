@@ -41,10 +41,14 @@ const PixelWar = () => {
     const context = game.getContext("2d");
     const gridCellSize = 10;
 
-    game.width = 1920;
-    game.height = 700;
+    const resizeCanvas = () => {
+      game.width = window.innerWidth; // Set canvas width to window width
+      game.height = window.innerHeight * 0.7; // Set canvas height to 70% of window height
+      drawGrids(context, game.width, game.height, gridCellSize, gridCellSize); // Redraw grids after resizing
+    };
 
     const drawGrids = (context, width, height, cellWidth, cellHeight) => {
+      context.clearRect(0, 0, width, height); // Clear canvas before redrawing
       context.beginPath();
       context.strokeStyle = "#ccc";
       for (let i = 0; i < width; i += cellWidth) {
@@ -52,13 +56,21 @@ const PixelWar = () => {
         context.lineTo(i + cellWidth, height);
       }
       for (let i = 0; i < height; i += cellHeight) {
-        context.moveTo(0, i + cellHeight, 0);
+        context.moveTo(0, i + cellHeight);
         context.lineTo(width, i + cellHeight);
       }
       context.stroke();
     };
 
-    drawGrids(context, game.width, game.height, gridCellSize, gridCellSize);
+    // Set initial canvas size and draw grids
+    resizeCanvas();
+
+    // Handle window resize
+    window.addEventListener("resize", resizeCanvas);
+
+    return () => {
+      window.removeEventListener("resize", resizeCanvas);
+    };
   }, []);
 
   useEffect(() => {
@@ -121,11 +133,11 @@ const PixelWar = () => {
     const game = gameRef.current;
     const cursor = cursorRef.current;
     const context = game.getContext("2d");
-    const x = cursor.offsetLeft + 1;
-    const y = cursor.offsetTop + 1;
+    const x = cursor.offsetLeft;
+    const y = cursor.offsetTop;
 
     context.fillStyle = currentColorChoice;
-    context.fillRect(x, y, 8, 8);
+    context.fillRect(x, y, 10, 10);
   };
 
   return (
@@ -146,14 +158,8 @@ const PixelWar = () => {
         {colorList.map((color, index) => (
           <div
             key={index}
+            className={styles.colorChoiceCircle}
             style={{
-              height: "2.6vw",
-              width: "2.6vw",
-              borderRadius: "50%",
-              border: "1px solid transparent",
-              transition: "all 0.3s",
-              cursor: "pointer",
-              marginInline: "2px",
               backgroundColor: color,
               border:
                 currentColorChoice === color

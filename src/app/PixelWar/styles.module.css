@@ -4,19 +4,6 @@
   cursor: none;
 }
 
-.colorChoice {
-  position: relative;
-  bottom: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  z-index: 100;
-  display: flex;
-  flex-direction: row;
-}
-
 .cursor {
   position: absolute;
   box-sizing: border-box;
@@ -47,4 +34,42 @@
   transform-origin: 0px 0px;
   transform: scale(1) translate(0px, 0px);
   cursor: grab;
+}
+
+.colorChoice {
+  margin-top: 2vw;
+  position: relative;
+  bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 100;
+}
+
+.colorChoiceCircle {
+  height: 2.6vw;
+  width: 2.6vw;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  transition: 0.3s all;
+  cursor: pointer;
+  margin-inline: 2px;
+}
+
+@media (max-width: 768px) {
+  .colorChoice {
+    margin-top: 2vw;
+    transition: 1s;
+    display: grid;
+    grid-template-columns: repeat(8, 12px);
+    grid-template-rows: repeat(1, auto);
+    grid-gap: 2px 25px;
+    justify-items: center;
+  }
+  .colorChoiceCircle {
+    height: 5vw;
+    width: 5vw;
+  }
 }
