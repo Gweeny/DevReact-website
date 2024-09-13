@@ -24,9 +24,7 @@ const Page = () => {
   const [visibleHebergement, setvisibleHebergement] = useState(false);
   const [visibleBudget, setvisibleBudget] = useState(false);
   const [visiblePersons, setvisiblePersons] = useState(false);
-  const [isOpenMontagnes, setisOpenMontagnes] = useState(false);
-  const [isOpenPalmier, setisOpenPalmier] = useState(false);
-  const [isOpenImmeubles, setisOpenImmeubles] = useState(false);
+  const [openSticker, setOpenSticker] = useState(null);
   const [counter, setCounter] = useState(1);
   const [imageList, setImageList] = useState([]);
   let pax = 1;
@@ -48,7 +46,7 @@ const Page = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          marginTop: 50,
+          marginTop: "1vw",
         }}
       >
         {/* ICI LE TOP Avec Journey */}
@@ -64,32 +62,26 @@ const Page = () => {
             maxHeight: 150,
           }}
         >
-          {isOpenMontagnes ? (
+          {openSticker === "montagnes" && (
             <MontagnesStickers onButtonClick={onButtonClick} />
-          ) : (
-            ""
           )}
-          {isOpenPalmier ? (
+          {openSticker === "palmier" && (
             <ArbresStickers onButtonClick={onButtonClick} />
-          ) : (
-            ""
           )}
-          {isOpenImmeubles ? (
+          {openSticker === "immeubles" && (
             <BatimentSticker onButtonClick={onButtonClick} />
-          ) : (
-            ""
           )}
         </div>
         {visiblePosition && (
           <Positions
             onClickOpenMontagnes={() => {
-              setisOpenMontagnes(!isOpenMontagnes);
+              setOpenSticker(openSticker === "montagnes" ? null : "montagnes");
             }}
             onClickOpenPalmier={() => {
-              setisOpenPalmier(!isOpenPalmier);
+              setOpenSticker(openSticker === "palmier" ? null : "palmier");
             }}
             onClickOpenImmeubles={() => {
-              setisOpenImmeubles(!isOpenImmeubles);
+              setOpenSticker(openSticker === "immeubles" ? null : "immeubles");
             }}
           />
         )}
@@ -517,7 +509,7 @@ const arbres = [
 
 const batiments = [
   {
-    src: "/Batiment_Bleu.svg",
+    src: "/Batiment_bleu.svg",
     alt: "batBleu",
   },
   {
@@ -552,12 +544,12 @@ const batiments = [
     dataIcon: "1",
   },
   {
-    src: "/Temple_rouge_Japon.svg",
+    src: "/Temple_rouge_japon.svg",
     string: "card1",
     dataIcon: "4",
   },
   {
-    src: "/Tour_ads.svg",
+    src: "/Tour_AdS.svg",
     string: "card3",
     dataIcon: "1",
   },
@@ -567,7 +559,7 @@ const batiments = [
     dataIcon: "3",
   },
   {
-    src: "/Ville_Perou.svg",
+    src: "/Ville_perou.svg",
     string: "card2",
     dataIcon: "5",
   },
