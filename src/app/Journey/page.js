@@ -11,6 +11,7 @@ import Draggable from "react-draggable";
 import Button from "./Buttons";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import StyleCard from "../card.module.css";
 
 let actualFileName = "";
 
@@ -37,6 +38,11 @@ const Page = () => {
     );
     console.log(imageList);
   };
+
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => setShowModal(true);
+  const closeModal = () => setShowModal(false);
 
   return (
     <>
@@ -278,6 +284,57 @@ const Page = () => {
                 : setvisiblePersons(true)
             }
           />
+        </div>
+        <button style={{ marginTop: "1vw" }} onClick={openModal}>
+          Valider
+        </button>
+        {showModal && <Modal onClose={closeModal} />}
+      </div>
+    </>
+  );
+};
+
+const Modal = ({ onClose }) => {
+  return (
+    <>
+      <div
+        className={StyleCard.background}
+        onClick={onClose}
+        style={{ position: "absolute", width: "40vw" }}
+      >
+        <div className={StyleCard.contenu} style={{ width: "35vw" }}>
+          <h3>Fin de la démo</h3>
+          <div>
+            <p>
+              Vous venez de tester la partie front-end d'une application web que
+              mes camarades et moi avons développée dans le cadre d'un projet
+              collaboratif, en suivant les principes de la méthode agile. La
+              première phase a consisté à définir le cahier des charges, établir
+              une charte graphique et réaliser des maquettes, qui nous ont
+              ensuite servi de guide pour toute la durée du projet.
+              <br />
+              Sur le plan technique, nous avons choisi d’utiliser
+              <strong>ReactJs</strong> pour concevoir une interface utilisateur
+              interactive et réactive. En ce qui concerne le back-end, nous
+              avons opté pour <strong>NodeJs</strong>, qui nous permettait
+              d’interagir avec une API externe afin de récupérer des
+              informations en temps réel, comme les billets d’avion, basés sur
+              les choix effectués lors de la création de la carte postale.
+              <br />
+              Pour le stockage des données, nous avons utilisé
+              <strong>MongoDB</strong>, une base de données NoSQL flexible,
+              particulièrement adaptée à des données non structurées.
+              <br />
+              Enfin, <strong>Firebase</strong> a joué un rôle crucial dans la
+              gestion des utilisateurs, en offrant un système d'authentification
+              sécurisé et facile à intégrer. Il nous a également permis de
+              stocker les cartes postales personnalisées créées par les
+              utilisateurs grâce à son service de stockage dans le cloud.
+            </p>
+          </div>
+          <button className={StyleCard.modalButton} onClick={onClose}>
+            Fermer
+          </button>
         </div>
       </div>
     </>
