@@ -22,6 +22,7 @@ class CalendarRetourComponent extends Component {
         className={Styles.calendarInside}
         style={{ width: 350, marginLeft: 20 }}
       >
+        <h2>Retour</h2>
         <Calendar
           onChange={this.onChange}
           value={this.state.date}

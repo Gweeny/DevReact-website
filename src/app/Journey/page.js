@@ -93,8 +93,8 @@ const Page = () => {
                 display: "flex",
                 flexDirection: "row",
                 position: "absolute",
-                bottom: 110,
-                left: 120,
+                bottom: "10vw",
+                left: "7.2vw",
               }}
             >
               <CalendarDepartComponent id="depart" />

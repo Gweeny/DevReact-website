@@ -23,6 +23,7 @@ class CalendarDepartComponent extends Component {
         className={Styles.calendarInside}
         style={{ width: 350, marginLeft: 220 }}
       >
+        <h2>Départ</h2>
         <Calendar
           onChange={this.onChange}
           value={this.state.date}
