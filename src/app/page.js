@@ -48,11 +48,12 @@ export default function Home() {
       onClickImage: "Journey",
     },
     {
-      titre: "Site web",
-      technos: "Conception sur Figma, et développement sur NextJs",
-      contenu: "Creation du site sur lequel vous naviguez actuellement.",
-      image: "/Portfolio.png",
-      onClickImage: "",
+      titre: "Pickify",
+      technos: "Développement avec React Native, Expo, et Firebase",
+      contenu:
+        "Développement de l'application mobile Pickify, un assistant interactif pour prendre des décisions facilement. Disponible sur Android et bientôt sur iOS.",
+      image: "/presentation.png",
+      onClickImage: "Pickify",
     },
     {
       titre: "Pixel war",

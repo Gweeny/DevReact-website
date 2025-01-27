@@ -80,13 +80,13 @@ const Header = () => {
               </li>
             </Link>
             <Link
-              href={"https://github.com/Gweeny"}
+              href={"https://www.linkedin.com/in/samya-hussain/"}
               rel="noopener noreferrer"
               target="_blank"
               className={`${styles.itemMenu} ${styles.orangeMenu} ${styles.violetBackgroundMenu} ${styles.github}`}
             >
               <li>
-                <h2>Github</h2>
+                <h2>LinkedIn</h2>
               </li>
             </Link>
           </ul>
@@ -147,13 +147,13 @@ const Menu = () => {
               </li>
             </Link>
             <Link
-              href={"https://github.com/Gweeny"}
+              href={"https://www.linkedin.com/in/samya-hussain/"}
               rel="noopener noreferrer"
               target="_blank"
               className={`${styles.item} ${styles.orange} ${styles.violetBackground} `}
             >
               <li>
-                <h2>Github</h2>
+                <h2>LinkedIn</h2>
               </li>
             </Link>
           </ul>
