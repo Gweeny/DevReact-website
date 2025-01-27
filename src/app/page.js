@@ -49,7 +49,7 @@ export default function Home() {
     },
     {
       titre: "Pickify",
-      technos: "Développement avec React Native, Expo, et Firebase",
+      technos: "Développement avec React Native, Expo et NodeJs",
       contenu:
         "Développement de l'application mobile Pickify, un assistant interactif pour prendre des décisions facilement. Disponible sur Android et bientôt sur iOS.",
       image: "/presentation.png",
