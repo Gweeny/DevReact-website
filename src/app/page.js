@@ -87,7 +87,7 @@ export default function Home() {
         id={"ambitions"}
         classNameContenu={styles.contenuViolet}
         classNameTitre={styles.titreJaune}
-        titre={"Mes ambitions"}
+        titre={"Mes aspirations"}
         contenu={
           <p>
             Développeuse web passionnée par la création d'applications web

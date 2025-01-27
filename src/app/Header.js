@@ -44,7 +44,7 @@ const Header = () => {
               className={`${styles.itemMenu} ${styles.violetMenu} ${styles.orangeBackgroundMenu}`}
             >
               <li>
-                <h2>Mes ambitions</h2>
+                <h2>Mes aspirations</h2>
               </li>
             </Link>
             <Link
@@ -111,7 +111,7 @@ const Menu = () => {
               className={`${styles.item} ${styles.violet} ${styles.jauneBackground}`}
             >
               <li>
-                <h2>Mes ambitions</h2>
+                <h2>Mes aspirations</h2>
               </li>
             </Link>
             <Link
