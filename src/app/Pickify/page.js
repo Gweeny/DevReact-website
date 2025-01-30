@@ -2,10 +2,12 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Styles from "./styles.module.css";
+// import Regles from "./regles/page";
+import Link from "next/link";
 
 const PickifyPage = () => {
   const [hovered, setHovered] = useState(null);
-
+  const [visibleRegles, setVisibleRegles] = useState(false);
   const handleMouseEnter = (index) => setHovered(index);
   const handleMouseLeave = () => setHovered(null);
 
@@ -96,6 +98,12 @@ const PickifyPage = () => {
             )}
           </div>
         </div>
+        <Link href={"/regles"}>
+          <button onClick={() => setVisibleRegles(!visibleRegles)}>
+            Règles de confidentialité
+          </button>
+        </Link>
+        {/* {visibleRegles && <Regles />} */}
       </div>
     </>
   );
