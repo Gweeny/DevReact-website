@@ -65,8 +65,8 @@ const Regles = () => {
       <section>
         <h2>5. Suppression des données</h2>
         <p>
-          Vous pouvez demander la suppression de votre compte via cette page
-          directement sur l'application dans votre profil.
+          Vous pouvez demander la suppression de votre compte directement sur
+          l'application dans votre profil.
         </p>
       </section>
 
